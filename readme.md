@@ -2,11 +2,7 @@
 
 go-linenoise is a Go package wrapping the [linenoise](https://github.com/antirez/linenoise) C library. 
 
-This is fork of [go.linenoise](https://github.com/GeertJohan/go.linenoise) package used in [EK](https://essentialkaos.com) projects.
-
-* [Installation](#installation)
-* [Build Status](#build-status)
-* [License](#license)
+This is fork of [go.linenoise](https://github.com/GeertJohan/go.linenoise) package used in [EK](https://github.com/essentialkaos) projects.
 
 ## Installation
 
