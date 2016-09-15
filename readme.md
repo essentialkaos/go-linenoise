@@ -4,6 +4,10 @@ go-linenoise is a Go package wrapping the [linenoise](https://github.com/antirez
 
 This is fork of [go.linenoise](https://github.com/GeertJohan/go.linenoise) package used in [EK](https://essentialkaos.com) projects.
 
+* [Installation](#installation)
+* [Build Status](#build-status)
+* [License](#license)
+
 ## Installation
 
 ```
