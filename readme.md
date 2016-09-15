@@ -1,8 +1,8 @@
 # `go-linenoise` [![GoDoc](https://godoc.org/pkg.re/essentialkaos/go-linenoise.v2?status.svg)](https://godoc.org/pkg.re/essentialkaos/go-linenoise.v2) [![Go Report Card](https://goreportcard.com/badge/github.com/essentialkaos/go-linenoise)](https://goreportcard.com/report/github.com/essentialkaos/go-linenoise) [![codebeat badge](https://codebeat.co/badges/f7800a13-657f-4be9-a359-2845f3433588)](https://codebeat.co/projects/github-com-essentialkaos-go-linenoise)
 
-go-linenoise is a [go](http://golang.org) package wrapping the [linenoise](https://github.com/antirez/linenoise) C library.
+go-linenoise is a Go package wrapping the [linenoise](https://github.com/antirez/linenoise) C library. 
 
-This package does not compile on windows.
+This is fork of [go.linenoise](https://github.com/GeertJohan/go.linenoise) package used in [EK](https://github.com/essentialkaos) projects.
 
 ## Installation
 
@@ -15,6 +15,13 @@ For update to latest stable release, do:
 ```
 go get -u pkg.re/essentialkaos/go-linenoise.v2
 ```
+
+## Build Status
+
+| Branch | Status |
+|------------|--------|
+| `master` | [![Build Status](https://travis-ci.org/essentialkaos/go-linenoise.svg?branch=master)](https://travis-ci.org/essentialkaos/go-linenoise) |
+| `develop` | [![Build Status](https://travis-ci.org/essentialkaos/go-linenoise.svg?branch=develop)](https://travis-ci.org/essentialkaos/go-linenoise) |
 
 ## License
 All code in this repository is licensed under a BSD license.
