@@ -16,6 +16,7 @@ package linenoise
 
 // #include <stdlib.h>
 // #include "linenoise.h"
+// #include "utf8.h"
 // #include "hooks.h"
 import "C"
 
@@ -58,7 +59,7 @@ func init() {
 	C.linenoiseSetupHintCallbackHook()
 }
 
-// Line displays given string and returns line from user input.
+// Line displays given string and returns line from user input
 func Line(prompt string) (string, error) {
 	promptCString := C.CString(prompt)
 	resultCString := C.linenoise(promptCString)
@@ -76,7 +77,7 @@ func Line(prompt string) (string, error) {
 	return result, nil
 }
 
-// AddHistory adds a line to history. Returns non-nil error on fail.
+// AddHistory adds a line to history. Returns non-nil error on fail
 func AddHistory(line string) error {
 	lineCString := C.CString(line)
 	res := C.linenoiseHistoryAdd(lineCString)
@@ -90,7 +91,7 @@ func AddHistory(line string) error {
 	return nil
 }
 
-// SetHistoryCapacity changes the maximum length of history. Returns non-nil error on fail.
+// SetHistoryCapacity changes the maximum length of history. Returns non-nil error on fail
 func SetHistoryCapacity(capacity int) error {
 	res := C.linenoiseHistorySetMaxLen(C.int(capacity))
 
@@ -101,7 +102,7 @@ func SetHistoryCapacity(capacity int) error {
 	return nil
 }
 
-// SaveHistory saves from file with given filename. Returns non-nil error on fail.
+// SaveHistory saves from file with given filename. Returns non-nil error on fail
 func SaveHistory(filename string) error {
 	filenameCString := C.CString(filename)
 	res := C.linenoiseHistorySave(filenameCString)
@@ -115,7 +116,7 @@ func SaveHistory(filename string) error {
 	return nil
 }
 
-// LoadHistory loads from file with given filename. Returns non-nil error on fail.
+// LoadHistory loads from file with given filename. Returns non-nil error on fail
 func LoadHistory(filename string) error {
 	filenameCString := C.CString(filename)
 	res := C.linenoiseHistoryLoad(filenameCString)
@@ -129,8 +130,8 @@ func LoadHistory(filename string) error {
 	return nil
 }
 
-// Clear clears the screen.
-func Clear() { // void linenoiseClearScreen(void);
+// Clear clears the screen
+func Clear() {
 	C.linenoiseClearScreen()
 }
 

@@ -8,5 +8,6 @@ void linenoiseSetupCompletionCallbackHook() {
 }
 
 void linenoiseSetupHintCallbackHook() {
+  linenoiseSetEncodingFunctions(linenoiseUtf8PrevCharLen, linenoiseUtf8NextCharLen, linenoiseUtf8ReadCode);
   linenoiseSetHintsCallback(linenoiseGoHintCallbackHook);
 }
