@@ -4,8 +4,6 @@ go-linenoise is a Go package wrapping the [linenoise](https://github.com/antirez
 
 This is fork of [go.linenoise](https://github.com/GeertJohan/go.linenoise) package used in [EK](https://github.com/essentialkaos) projects.
 
-<br/>
-
 ### Installation
 
 Before the initial install allows git to use redirects for [pkg.re](https://github.com/essentialkaos/pkgre) service (reason why you should do this described [here](https://github.com/essentialkaos/pkgre#git-support)):
@@ -26,16 +24,12 @@ For update to latest stable release, do:
 go get -u pkg.re/essentialkaos/go-linenoise.v3
 ```
 
-<br/>
-
 ### Build Status
 
 | Branch | Status |
 |--------|--------|
 | `master` | [![Build Status](https://travis-ci.org/essentialkaos/go-linenoise.svg?branch=master)](https://travis-ci.org/essentialkaos/go-linenoise) |
 | `develop` | [![Build Status](https://travis-ci.org/essentialkaos/go-linenoise.svg?branch=develop)](https://travis-ci.org/essentialkaos/go-linenoise) |
-
-<br/>
 
 ### License
 All code in this repository is licensed under a BSD license.
