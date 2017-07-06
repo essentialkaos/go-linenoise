@@ -4,7 +4,15 @@ go-linenoise is a Go package wrapping the [linenoise](https://github.com/antirez
 
 This is fork of [go.linenoise](https://github.com/GeertJohan/go.linenoise) package used in [EK](https://github.com/essentialkaos) projects.
 
-## Installation
+### Installation
+
+Before the initial install allows git to use redirects for [pkg.re](https://github.com/essentialkaos/pkgre) service (reason why you should do this described [here](https://github.com/essentialkaos/pkgre#git-support)):
+
+```
+git config --global http.https://pkg.re.followRedirects true
+```
+
+For install, do:
 
 ```
 go get pkg.re/essentialkaos/go-linenoise.v3
@@ -16,14 +24,16 @@ For update to latest stable release, do:
 go get -u pkg.re/essentialkaos/go-linenoise.v3
 ```
 
-## Build Status
+### Build Status
 
 | Branch | Status |
-|------------|--------|
+|--------|--------|
 | `master` | [![Build Status](https://travis-ci.org/essentialkaos/go-linenoise.svg?branch=master)](https://travis-ci.org/essentialkaos/go-linenoise) |
 | `develop` | [![Build Status](https://travis-ci.org/essentialkaos/go-linenoise.svg?branch=develop)](https://travis-ci.org/essentialkaos/go-linenoise) |
 
-## License
+### License
 All code in this repository is licensed under a BSD license.
 This project wraps [linenoise](https://github.com/antirez/linenoise) which is written by Salvatore Sanfilippo and Pieter Noordhuis. The license for linenoise is included in the files `linenoise.c` and `linenoise.h`.
 For all other files please read the [LICENSE](LICENSE) file.
+
+<p align="center"><a href="https://essentialkaos.com"><img src="https://gh.kaos.io/ekgh.svg"/></a></p>
