@@ -109,7 +109,7 @@
 #include <stdio.h>
 #include <errno.h>
 #include <string.h>
-#include <stdlib.h>
+#include <strings.h>
 #include <ctype.h>
 #include <sys/stat.h>
 #include <sys/types.h>

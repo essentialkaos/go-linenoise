@@ -44,6 +44,7 @@ func main() {
 
   if err != nil {
     fmt.Printf("Error: %v\n", err)
+    return
   }
 
   fmt.Printf("Input: %s\n", input)
