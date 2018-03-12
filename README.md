@@ -24,6 +24,33 @@ For update to latest stable release, do:
 go get -u pkg.re/essentialkaos/go-linenoise.v3
 ```
 
+### Example
+
+````go
+package main
+
+// ////////////////////////////////////////////////////////////////////////// //
+
+import (
+  "fmt"
+
+  "pkg.re/essentialkaos/go-linenoise.v3"
+)
+
+// ////////////////////////////////////////////////////////////////////////// //
+
+func main() {
+  input, err := linenoise.Line("> ")
+
+  if err != nil {
+    fmt.Printf("Error: %v\n", err)
+  }
+
+  fmt.Printf("Input: %s\n", input)
+}
+
+````
+
 ### Build Status
 
 | Branch | Status |
