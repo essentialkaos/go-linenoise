@@ -109,12 +109,11 @@
 #include <stdio.h>
 #include <errno.h>
 #include <string.h>
-#include <stdlib.h>
+#include <strings.h>
 #include <ctype.h>
 #include <sys/stat.h>
 #include <sys/types.h>
 #include <sys/ioctl.h>
-#include <unistd.h>
 #include "linenoise.h"
 
 #define LINENOISE_DEFAULT_HISTORY_MAX_LEN 100
@@ -568,6 +567,8 @@ void refreshShowHints(struct abuf *ab, struct linenoiseState *l, int pcollen) {
             if (bold == 1 && color == -1) color = 37;
             if (color != -1 || bold != 0)
                 snprintf(seq,64,"\033[%d;%d;49m",bold,color);
+            else
+                seq[0] = '\0';
             abAppend(ab,seq,strlen(seq));
             abAppend(ab,hint,hintlen);
             if (color != -1 || bold != 0)
@@ -1007,6 +1008,12 @@ static int linenoiseEdit(int stdin_fd, int stdout_fd, char *buf, size_t buflen, 
                         case '3': /* Delete key. */
                             linenoiseEditDelete(&l);
                             break;
+                        case '1': /* Home */
+                            linenoiseEditMoveHome(&l);
+                            break;
+                        case '4': /* End */
+                            linenoiseEditMoveEnd(&l);
+                            break;
                         }
                     }
                 } else {
@@ -1295,7 +1302,7 @@ int linenoiseHistorySave(const char *filename) {
     fp = fopen(filename,"w");
     umask(old_umask);
     if (fp == NULL) return -1;
-    chmod(filename,S_IRUSR|S_IWUSR);
+    (void)chmod(filename,S_IRUSR|S_IWUSR);
     for (j = 0; j < history_len; j++)
         fprintf(fp,"%s\n",history[j]);
     fclose(fp);
