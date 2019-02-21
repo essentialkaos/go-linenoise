@@ -1,6 +1,16 @@
-# `go-linenoise` [![GoDoc](https://godoc.org/pkg.re/essentialkaos/go-linenoise.v3?status.svg)](https://godoc.org/pkg.re/essentialkaos/go-linenoise.v3) [![Go Report Card](https://goreportcard.com/badge/github.com/essentialkaos/go-linenoise)](https://goreportcard.com/report/github.com/essentialkaos/go-linenoise) [![codebeat badge](https://codebeat.co/badges/f7800a13-657f-4be9-a359-2845f3433588)](https://codebeat.co/projects/github-com-essentialkaos-go-linenoise) [![License](https://gh.kaos.st/bsd.svg)](LICENSE)
+<p align="center"><a href="#readme"><img src="https://gh.kaos.st/go-linenoise.svg"/></a></p>
 
-go-linenoise is a Go package wrapping the [linenoise](https://github.com/antirez/linenoise) C library. Since `v3` we use [@yhirose](https://github.com/yhirose) [fork](https://github.com/yhirose/linenoise/tree/utf8-support) with UTF-8 support.
+<p align="center"><a href="#installation">Installation</a> • <a href="#example">Example</a> • <a href="#build-status">Build Status</a> • <a href="#license">License</a></p>
+
+<p align="center">
+  <a href="https://godoc.org/pkg.re/essentialkaos/go-linenoise.v3"><img src="https://godoc.org/pkg.re/essentialkaos/go-linenoise.v3?status.svg"></a>
+  <a href="https://goreportcard.com/report/github.com/essentialkaos/go-linenoise"><img src="https://goreportcard.com/badge/github.com/essentialkaos/go-linenoise"></a>
+  <a href="https://travis-ci.org/essentialkaos/go-linenoise"><img src="https://travis-ci.org/essentialkaos/go-linenoise.svg"></a>
+  <a href="https://codebeat.co/projects/github-com-essentialkaos-go-linenoise"><img alt="codebeat badge" src="https://codebeat.co/badges/f7800a13-657f-4be9-a359-2845f3433588" /></a>
+  <a href="https://github.com/essentialkaos/go-linenoise/blob/master/LICENSE"><img src="https://gh.kaos.st/bsd.svg"></a>
+</p>
+
+`go-linenoise` is a Go package wrapping the [linenoise](https://github.com/antirez/linenoise) C library. Since `v3` we use [@yhirose](https://github.com/yhirose) [fork](https://github.com/yhirose/linenoise/tree/utf8-support) with UTF-8 support.
 
 This is fork of [go.linenoise](https://github.com/GeertJohan/go.linenoise) package used in [EK](https://github.com/essentialkaos) projects.
 
