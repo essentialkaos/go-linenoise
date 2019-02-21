@@ -1,4 +1,4 @@
-// +build !windows
+// +build cgo !windows
 
 // Package linenoise wraps the linenoise library (https://github.com/antirez/linenoise).
 //
@@ -24,6 +24,11 @@ import (
 	"errors"
 	"unsafe"
 )
+
+// ///////////////////////////////////////////////////////////////////////////////// //
+
+// VERSION is current version of go-linenoise package
+const VERSION = "3.2.0"
 
 // ///////////////////////////////////////////////////////////////////////////////// //
 
