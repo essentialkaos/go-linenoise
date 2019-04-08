@@ -7,6 +7,7 @@ go:
   - 1.9.x
   - 1.10.x
   - 1.11.x
+  - 1.12.x
   - tip
 
 branches:
@@ -25,6 +26,7 @@ matrix:
     - os: osx
 
 before_install:
+  - rm -rf /home/travis/.cache/go-build
   - make deps-test
 
 script:
