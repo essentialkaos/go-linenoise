@@ -4,6 +4,7 @@
   <a href="https://godoc.org/pkg.re/essentialkaos/go-linenoise.v3"><img src="https://godoc.org/pkg.re/essentialkaos/go-linenoise.v3?status.svg"></a>
   <a href="https://goreportcard.com/report/github.com/essentialkaos/go-linenoise"><img src="https://goreportcard.com/badge/github.com/essentialkaos/go-linenoise"></a>
   <a href="https://travis-ci.com/essentialkaos/go-linenoise"><img src="https://travis-ci.com/essentialkaos/go-linenoise.svg"></a>
+  <a href="https://github.com/essentialkaos/go-linenoise/actions?query=workflow%3ACodeQL"><img src="https://github.com/essentialkaos/go-linenoise/workflows/CodeQL/badge.svg" /></a>
   <a href="https://codebeat.co/projects/github-com-essentialkaos-go-linenoise"><img alt="codebeat badge" src="https://codebeat.co/badges/f7800a13-657f-4be9-a359-2845f3433588" /></a>
   <a href="https://github.com/essentialkaos/go-linenoise/blob/master/LICENSE"><img src="https://gh.kaos.st/bsd.svg"></a>
 </p>
