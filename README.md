@@ -1,7 +1,7 @@
 <p align="center"><a href="#readme"><img src="https://gh.kaos.st/go-linenoise.svg"/></a></p>
 
 <p align="center">
-  <a href="https://godoc.org/pkg.re/essentialkaos/go-linenoise.v3"><img src="https://godoc.org/pkg.re/essentialkaos/go-linenoise.v3?status.svg"></a>
+  <a href="https://pkg.go.dev/pkg.re/essentialkaos/go-linenoise.v3"><img src="https://gh.kaos.st/godoc.svg" alt="PkgGoDev"></a>
   <a href="https://goreportcard.com/report/github.com/essentialkaos/go-linenoise"><img src="https://goreportcard.com/badge/github.com/essentialkaos/go-linenoise"></a>
   <a href="https://github.com/essentialkaos/go-linenoise/actions"><img src="https://github.com/essentialkaos/go-linenoise/workflows/CI/badge.svg" alt="GitHub Actions Status" /></a>
   <a href="https://github.com/essentialkaos/go-linenoise/actions?query=workflow%3ACodeQL"><img src="https://github.com/essentialkaos/go-linenoise/workflows/CodeQL/badge.svg" /></a>
