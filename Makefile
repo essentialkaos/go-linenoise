@@ -10,11 +10,9 @@
 export GO111MODULE=on
 
 .DEFAULT_GOAL := help
-.PHONY = fmt vet deps-test test mod-init mod-update help
+.PHONY = fmt vet test mod-init mod-update help
 
 ################################################################################
-
-deps-test: deps ## Download dependencies for tests
 
 test: ## Run tests
 	go test -covermode=count .
