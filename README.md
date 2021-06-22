@@ -1,12 +1,12 @@
 <p align="center"><a href="#readme"><img src="https://gh.kaos.st/go-linenoise.svg"/></a></p>
 
 <p align="center">
-  <a href="https://pkg.go.dev/pkg.re/essentialkaos/go-linenoise.v3"><img src="https://gh.kaos.st/godoc.svg" alt="PkgGoDev"></a>
-  <a href="https://goreportcard.com/report/github.com/essentialkaos/go-linenoise"><img src="https://goreportcard.com/badge/github.com/essentialkaos/go-linenoise"></a>
-  <a href="https://github.com/essentialkaos/go-linenoise/actions"><img src="https://github.com/essentialkaos/go-linenoise/workflows/CI/badge.svg" alt="GitHub Actions Status" /></a>
-  <a href="https://github.com/essentialkaos/go-linenoise/actions?query=workflow%3ACodeQL"><img src="https://github.com/essentialkaos/go-linenoise/workflows/CodeQL/badge.svg" /></a>
-  <a href="https://codebeat.co/projects/github-com-essentialkaos-go-linenoise"><img alt="codebeat badge" src="https://codebeat.co/badges/f7800a13-657f-4be9-a359-2845f3433588" /></a>
-  <a href="https://github.com/essentialkaos/go-linenoise/blob/master/LICENSE"><img src="https://gh.kaos.st/bsd.svg"></a>
+  <a href="https://kaos.sh/g/go-linenoise"><img src="https://gh.kaos.st/godoc.svg" alt="PkgGoDev"></a>
+  <a href="https://kaos.sh/w/aligo/ci"><img src="https://kaos.sh/w/aligo/ci.svg" alt="GitHub Actions CI Status" /></a>
+  <a href="https://kaos.sh/r/aligo"><img src="https://kaos.sh/r/aligo.svg" alt="GoReportCard" /></a>
+  <a href="https://kaos.sh/b/aligo"><img src="https://codebeat.co/badges/f7800a13-657f-4be9-a359-2845f3433588" alt="codebeat badge" /></a>
+  <a href="https://kaos.sh/w/aligo/codeql"><img src="https://kaos.sh/w/aligo/codeql.svg" alt="GitHub Actions CodeQL Status" /></a>
+  <a href="#license"><img src="https://gh.kaos.st/bsd.svg"></a>
 </p>
 
 <p align="center"><a href="#installation">Installation</a> • <a href="#example">Example</a> • <a href="#build-status">Build Status</a> • <a href="#license">License</a></p>
@@ -22,13 +22,13 @@ This is fork of [go.linenoise](https://github.com/GeertJohan/go.linenoise) packa
 For install, do:
 
 ```
-go get pkg.re/essentialkaos/go-linenoise.v3
+go get github.com/essentialkaos/go-linenoise
 ```
 
 For update to latest stable release, do:
 
 ```
-go get -u pkg.re/essentialkaos/go-linenoise.v3
+go get -u github.com/essentialkaos/go-linenoise
 ```
 
 ### Example
@@ -41,7 +41,7 @@ package main
 import (
   "fmt"
 
-  "pkg.re/essentialkaos/go-linenoise.v3"
+  "github.com/essentialkaos/go-linenoise"
 )
 
 // ////////////////////////////////////////////////////////////////////////// //
@@ -63,8 +63,8 @@ func main() {
 
 | Branch | Status |
 |--------|--------|
-| `master` | [![CI](https://github.com/essentialkaos/go-linenoise/workflows/CI/badge.svg?branch=master)](https://github.com/essentialkaos/go-linenoise/actions) |
-| `develop` | [![CI](https://github.com/essentialkaos/go-linenoise/workflows/CI/badge.svg?branch=develop)](https://github.com/essentialkaos/go-linenoise/actions) |
+| `master` | [![CI](https://kaos.sh/w/go-linenoise/ci.svg?branch=master)](https://kaos.sh/w/go-linenoise/ci?query=branch:master) |
+| `develop` | [![CI](https://kaos.sh/w/go-linenoise/ci.svg?branch=develop)](https://kaos.sh/w/go-linenoise/ci?query=branch:develop) |
 
 ### License
 All code in this repository is licensed under a BSD license.
