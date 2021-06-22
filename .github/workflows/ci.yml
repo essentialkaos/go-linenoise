@@ -13,6 +13,7 @@ jobs:
 
     env:
       SRC_DIR: src/github.com/${{ github.repository }}
+      GO111MODULE: auto
 
     strategy:
       matrix:
@@ -36,8 +37,9 @@ jobs:
         with:
           path: ${{env.SRC_DIR}}
 
-      - name: Fix problems with go.mod
-        run: go env -w GOFLAGS=-mod=mod
+      - name: Download dependencies
+        working-directory: ${{env.SRC_DIR}}
+        run: make deps-test
 
       - name: Run tests
         working-directory: ${{env.SRC_DIR}}
