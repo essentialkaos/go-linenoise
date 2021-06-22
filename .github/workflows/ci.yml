@@ -36,6 +36,9 @@ jobs:
         with:
           path: ${{env.SRC_DIR}}
 
+      - name: Fix go.mod on Go 1.16.x
+        run: go env -w GOFLAGS=-mod=mod
+
       - name: Run tests
         working-directory: ${{env.SRC_DIR}}
         run: make test
