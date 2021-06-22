@@ -16,7 +16,7 @@ jobs:
 
     strategy:
       matrix:
-        go: [ '1.14.x', '1.15.x' ]
+        go: [ '1.15.x', '1.16.x' ]
 
     steps:
       - name: Set up Go
@@ -36,9 +36,8 @@ jobs:
         with:
           path: ${{env.SRC_DIR}}
 
-      - name: Download dependencies
-        working-directory: ${{env.SRC_DIR}}
-        run: make deps-test
+      - name: Fix problems with go.mod
+        run: go env -w GOFLAGS=-mod=mod
 
       - name: Run tests
         working-directory: ${{env.SRC_DIR}}
