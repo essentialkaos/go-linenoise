@@ -16,7 +16,7 @@ git-config: ## Configure git redirects for stable import path services
 	git config --global http.https://pkg.re.followRedirects true
 
 deps-test: git-config ## Download dependencies for tests
-	go get -d -v pkg.re/check.v1
+	go get -d -v pkg.re/essentialkaos/check.v1
 
 test: ## Run tests
 	go test -covermode=count .
