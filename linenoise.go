@@ -27,11 +27,6 @@ import (
 
 // ///////////////////////////////////////////////////////////////////////////////// //
 
-// VERSION is current version of go-linenoise package
-const VERSION = "3.3.2"
-
-// ///////////////////////////////////////////////////////////////////////////////// //
-
 // ErrKillSignal is returned returned by Line() when a user quits from prompt.
 // This occurs when the user enters ctrl+C or ctrl+D.
 var ErrKillSignal = errors.New("Prompt was quited with a kill signal")
