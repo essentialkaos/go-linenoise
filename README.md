@@ -4,7 +4,7 @@
   <a href="https://kaos.sh/g/go-linenoise"><img src="https://gh.kaos.st/godoc.svg" alt="PkgGoDev"></a>
   <a href="https://kaos.sh/w/go-linenoise/ci"><img src="https://kaos.sh/w/go-linenoise/ci.svg" alt="GitHub Actions CI Status" /></a>
   <a href="https://kaos.sh/r/go-linenoise"><img src="https://kaos.sh/r/go-linenoise.svg" alt="GoReportCard" /></a>
-  <a href="https://kaos.sh/b/go-linenoise"><img src="https://codebeat.co/badges/f7800a13-657f-4be9-a359-2845f3433588" alt="Codebeat badge" /></a>
+  <a href="https://kaos.sh/b/go-linenoise"><img src="https://kaos.sh/b/f7800a13-657f-4be9-a359-2845f3433588.svg" alt="Codebeat badge" /></a>
   <a href="https://kaos.sh/w/go-linenoise/codeql"><img src="https://kaos.sh/w/go-linenoise/codeql.svg" alt="GitHub Actions CodeQL Status" /></a>
   <a href="https://github.com/essentialkaos/go-linenoise/blob/master/LICENSE"><img src="https://gh.kaos.st/bsd.svg"></a>
 </p>
