@@ -22,13 +22,13 @@ This is fork of [go.linenoise](https://github.com/GeertJohan/go.linenoise) packa
 For install, do:
 
 ```
-go get pkg.re/essentialkaos/go-linenoise.v3
+go get github.com/essentialkaos/go-linenoise
 ```
 
 For update to latest stable release, do:
 
 ```
-go get -u pkg.re/essentialkaos/go-linenoise.v3
+go get -u github.com/essentialkaos/go-linenoise
 ```
 
 ### Example
@@ -41,7 +41,7 @@ package main
 import (
   "fmt"
 
-  "pkg.re/essentialkaos/go-linenoise.v3"
+  "github.com/essentialkaos/go-linenoise"
 )
 
 // ////////////////////////////////////////////////////////////////////////// //

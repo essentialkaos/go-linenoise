@@ -1,9 +1,10 @@
+//go:build cgo || !windows
 // +build cgo !windows
 
 // Package linenoise wraps the linenoise library (https://github.com/antirez/linenoise).
 //
 // The package is imported with "go-" prefix
-// 	import "pkg.re/essentialkaos/go-linenoise"
+// 	import "github.com/essentialkaos/go-linenoise"
 //
 // Simple readline usage:
 // 	linenoise.Line("prompt> ")
