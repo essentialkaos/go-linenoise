@@ -39,7 +39,7 @@ jobs:
 
       - name: Download dependencies
         working-directory: ${{env.SRC_DIR}}
-        run: make mod-update
+        run: make deps
 
       - name: Run tests
         working-directory: ${{env.SRC_DIR}}
