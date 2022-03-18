@@ -10,7 +10,7 @@
 export GO111MODULE=on
 
 .DEFAULT_GOAL := help
-.PHONY = fmt vet deps-test test mod-init mod-update help
+.PHONY = fmt vet deps deps-test test mod-init mod-update mod-vendor help
 
 ################################################################################
 
