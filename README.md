@@ -1,7 +1,7 @@
 <p align="center"><a href="#readme"><img src="https://gh.kaos.st/go-linenoise.svg"/></a></p>
 
 <p align="center">
-  <a href="https://kaos.sh/g/go-linenoise"><img src="https://gh.kaos.st/godoc.svg" alt="PkgGoDev"></a>
+  <a href="https://kaos.sh/g/go-linenoise.v3"><img src="https://gh.kaos.st/godoc.svg" alt="PkgGoDev"></a>
   <a href="https://kaos.sh/w/go-linenoise/ci"><img src="https://kaos.sh/w/go-linenoise/ci.svg" alt="GitHub Actions CI Status" /></a>
   <a href="https://kaos.sh/r/go-linenoise"><img src="https://kaos.sh/r/go-linenoise.svg" alt="GoReportCard" /></a>
   <a href="https://kaos.sh/b/go-linenoise"><img src="https://kaos.sh/b/f7800a13-657f-4be9-a359-2845f3433588.svg" alt="Codebeat badge" /></a>
@@ -22,13 +22,13 @@ This is fork of [go.linenoise](https://github.com/GeertJohan/go.linenoise) packa
 For install, do:
 
 ```
-go get github.com/essentialkaos/go-linenoise
+go get github.com/essentialkaos/go-linenoise/v3
 ```
 
 For update to latest stable release, do:
 
 ```
-go get -u github.com/essentialkaos/go-linenoise
+go get -u github.com/essentialkaos/go-linenoise/v3
 ```
 
 ### Example
@@ -41,7 +41,7 @@ package main
 import (
   "fmt"
 
-  "github.com/essentialkaos/go-linenoise"
+  "github.com/essentialkaos/go-linenoise/v3"
 )
 
 // ////////////////////////////////////////////////////////////////////////// //
