@@ -1,4 +1,4 @@
-module github.com/essentialkaos/go-linenoise
+module github.com/essentialkaos/go-linenoise/v3
 
 go 1.17
 
