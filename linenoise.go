@@ -21,6 +21,8 @@ package linenoise
 // #include "hooks.h"
 import "C"
 
+// ///////////////////////////////////////////////////////////////////////////////// //
+
 import (
 	"errors"
 	"unsafe"
@@ -28,15 +30,17 @@ import (
 
 // ///////////////////////////////////////////////////////////////////////////////// //
 
-// ErrKillSignal is returned returned by Line() when a user quits from prompt.
-// This occurs when the user enters ctrl+C or ctrl+D.
-var ErrKillSignal = errors.New("Prompt was quited with a kill signal")
-
 // CompletionHandler provides possible completions for given input
 type CompletionHandler func(input string) []string
 
 // HintHandler provides hint for user input
 type HintHandler func(input string) string
+
+// ///////////////////////////////////////////////////////////////////////////////// //
+
+// ErrKillSignal is returned returned by Line() when a user quits from prompt.
+// This occurs when the user enters ctrl+C or ctrl+D.
+var ErrKillSignal = errors.New("Prompt was quited with a kill signal")
 
 // ///////////////////////////////////////////////////////////////////////////////// //
 
@@ -138,11 +142,23 @@ func Clear() {
 
 // SetMultiline sets linenoise to multiline or single line.
 // In multiline mode the user input will be wrapped to a new line when the length exceeds the amount of available rows in the terminal.
-func SetMultiline(ml bool) {
-	if ml {
+func SetMultiline(enable bool) {
+	if enable {
 		C.linenoiseSetMultiLine(1)
 	} else {
 		C.linenoiseSetMultiLine(0)
+	}
+}
+
+// SetMaskMode sets mask mode. When it is enabled, instead of the input that the user
+// is typing, the terminal will just display a corresponding number of asterisks,
+// like "****". This is useful for passwords and other secrets that should not
+// be displayed.
+func SetMaskMode(enable bool) {
+	if enable {
+		C.linenoiseMaskModeEnable()
+	} else {
+		C.linenoiseMaskModeDisable()
 	}
 }
 
