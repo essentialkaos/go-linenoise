@@ -16,6 +16,7 @@ import "C"
 
 import (
 	"errors"
+	"fmt"
 	"unsafe"
 )
 
@@ -36,20 +37,23 @@ var ErrKillSignal = errors.New("Prompt was quited with a kill signal")
 // ///////////////////////////////////////////////////////////////////////////////// //
 
 // complHandler is completion handler function
-var complHandler = func(input string) []string { return nil }
+var complHandler CompletionHandler = emptyCompomplHandler
 
 // hintHandler is hint handler function
-var hintHandler = func(input string) string { return "" }
+var hintHandler HintHandler = emptyHintHandler
 
 // hintColor contains hint color ANSI code (dark grey by default)
 var hintColor uint8 = 90
 
+// hintBold contains flag for bold hints
+var hintBold bool = false
+
 // ///////////////////////////////////////////////////////////////////////////////// //
 
-func init() {
-	C.linenoiseSetupCompletionCallbackHook()
-	C.linenoiseSetupHintCallbackHook()
-}
+var emptyCompomplHandler = func(input string) []string { return nil }
+var emptyHintHandler = func(input string) string { return "" }
+
+// ///////////////////////////////////////////////////////////////////////////////// //
 
 // Line displays given string and returns line from user input
 func Line(prompt string) (string, error) {
@@ -149,25 +153,41 @@ func SetMaskMode(enable bool) {
 	}
 }
 
-// SetCompletionHandler sets the CompletionHandler to be used for completion
+// SetCompletionHandler sets the CompletionHandler to be used for completion (using Tab key)
+//
+// You can pass nil as the handler to remove the previously set handler
 func SetCompletionHandler(h CompletionHandler) {
+	if h == nil {
+		complHandler = emptyCompomplHandler
+		return
+	}
+
 	complHandler = h
 }
 
 // SetHintHandler sets the HintHandler to be used for input hints
+//
+// You can pass nil as the handler to remove the previously set handler
 func SetHintHandler(h HintHandler) {
+	if h == nil {
+		hintHandler = emptyHintHandler
+		return
+	}
+
 	hintHandler = h
 }
 
 // SetHintColor sets hint text color to color with given ANSI code
 //
-// Color codes: https://github.com/essentialkaos/fmtc/wiki#88256-colors
-func SetHintColor(color uint8) {
-	if color < 0 {
-		color = 0
+// Color codes: https://github.com/essentialkaos/fmtc/wiki#816-colors
+func SetHintColor(color uint8, bold bool) error {
+	if color < 30 || color > 97 || (color > 37 && color < 90) {
+		return fmt.Errorf("\"%d\" is not valid ANSI color code", color)
 	}
 
-	hintColor = color
+	hintColor, hintBold = color, bold
+
+	return nil
 }
 
 // PrintKeyCodes puts linenoise in key codes debugging mode.
@@ -179,23 +199,30 @@ func PrintKeyCodes() {
 
 // ///////////////////////////////////////////////////////////////////////////////// //
 
+// init inits callbacks
+func init() {
+	C.linenoiseSetupCompletionCallbackHook()
+	C.linenoiseSetupHintCallbackHook()
+}
+
 //export linenoiseGoCompletionCallbackHook
 func linenoiseGoCompletionCallbackHook(input *C.char, completions *C.linenoiseCompletions) {
 	completionsSlice := complHandler(C.GoString(input))
-
 	completionsLen := len(completionsSlice)
 	completions.len = C.size_t(completionsLen)
 
-	if completionsLen > 0 {
-		cvec := C.malloc(C.size_t(int(unsafe.Sizeof(*(**C.char)(nil))) * completionsLen))
-		cvecSlice := (*(*[999999]*C.char)(cvec))[:completionsLen]
-
-		for i, str := range completionsSlice {
-			cvecSlice[i] = C.CString(str)
-		}
-
-		completions.cvec = (**C.char)(cvec)
+	if completionsLen == 0 {
+		return
 	}
+
+	cvec := C.malloc(C.size_t(int(unsafe.Sizeof(*(**C.char)(nil))) * completionsLen))
+	cvecSlice := (*(*[999999]*C.char)(cvec))[:completionsLen]
+
+	for i, str := range completionsSlice {
+		cvecSlice[i] = C.CString(str)
+	}
+
+	completions.cvec = (**C.char)(cvec)
 }
 
 //export linenoiseGoHintCallbackHook
@@ -207,7 +234,12 @@ func linenoiseGoHintCallbackHook(input *C.char, color *C.int, bold *C.int) *C.ch
 	}
 
 	*color = C.int(hintColor)
-	*bold = C.int(0)
+
+	if hintBold {
+		*bold = C.int(1)
+	} else {
+		*bold = C.int(0)
+	}
 
 	return C.CString(hintText)
 }
