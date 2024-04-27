@@ -6,41 +6,72 @@ on:
   pull_request:
     branches: [master]
 
-jobs:
-  Go:
-    name: Go
-    runs-on: ubuntu-latest
+permissions:
+  actions: read
+  contents: read
+  statuses: write
 
-    env:
-      SRC_DIR: src/github.com/${{ github.repository }}
-      GO111MODULE: auto
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  GoLinux:
+    name: Go (Linux)
+    runs-on: ubuntu-latest
 
     strategy:
       matrix:
-        go: [ '1.17.x', '1.18.x' ]
+        go: [ '1.19.x', '1.20.x', '1.21.x' , '1.22.x' ]
 
     steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
       - name: Set up Go
-        uses: actions/setup-go@v3
+        uses: actions/setup-go@v5
         with:
           go-version: ${{ matrix.go }}
-        id: go
-
-      - name: Setup PATH
-        run: |
-          echo "GOPATH=${{ github.workspace }}" >> "$GITHUB_ENV"
-          echo "GOBIN=${{ github.workspace }}/bin" >> "$GITHUB_ENV"
-          echo "${{ github.workspace }}/bin" >> "$GITHUB_PATH"
-
-      - name: Checkout
-        uses: actions/checkout@v3
-        with:
-          path: ${{env.SRC_DIR}}
 
       - name: Download dependencies
-        working-directory: ${{env.SRC_DIR}}
         run: make deps
 
       - name: Run tests
-        working-directory: ${{env.SRC_DIR}}
         run: make test
+
+  GoMac:
+    name: Go (macOS)
+    runs-on: macos-latest
+
+    needs: GoLinux
+
+    strategy:
+      matrix:
+        go: [ '1.19.x', '1.20.x', '1.21.x' , '1.22.x' ]
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up Go
+        uses: actions/setup-go@v5
+        with:
+          go-version: ${{ matrix.go }}
+
+      - name: Download dependencies
+        run: make deps
+
+      - name: Run tests
+        run: make test
+
+  Typos:
+    name: Typos
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Check spelling
+        continue-on-error: true
+        uses: crate-ci/typos@master
