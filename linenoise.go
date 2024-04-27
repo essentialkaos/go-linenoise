@@ -159,7 +159,9 @@ func SetHintHandler(h HintHandler) {
 	hintHandler = h
 }
 
-// SetHintColor sets hint text color
+// SetHintColor sets hint text color to color with given ANSI code
+//
+// Color codes: https://github.com/essentialkaos/fmtc/wiki#88256-colors
 func SetHintColor(color uint8) {
 	if color < 0 {
 		color = 0
