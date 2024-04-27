@@ -1,16 +1,7 @@
 //go:build cgo || !windows
 // +build cgo !windows
 
-// Package linenoise wraps the linenoise library (https://github.com/antirez/linenoise).
-//
-// The package is imported with "go-" prefix
-// 	import "github.com/essentialkaos/go-linenoise"
-//
-// Simple readline usage:
-// 	linenoise.Line("prompt> ")
-//
-// Adding lines to history, you could simply do this for every line you read.
-// 	linenoise.AddHistory("This will be displayed in prompt when arrow-up is pressed")
+// Package linenoise wraps the linenoise library (https://github.com/yhirose/linenoise).
 package linenoise
 
 // ///////////////////////////////////////////////////////////////////////////////// //
@@ -45,17 +36,13 @@ var ErrKillSignal = errors.New("Prompt was quited with a kill signal")
 // ///////////////////////////////////////////////////////////////////////////////// //
 
 // complHandler is completion handler function
-var complHandler = func(input string) []string {
-	return nil
-}
+var complHandler = func(input string) []string { return nil }
 
 // hintHandler is hint handler function
-var hintHandler = func(input string) string {
-	return ""
-}
+var hintHandler = func(input string) string { return "" }
 
 // hintColor contains hint color ANSI code (dark grey by default)
-var hintColor = 90
+var hintColor uint8 = 90
 
 // ///////////////////////////////////////////////////////////////////////////////// //
 
@@ -173,7 +160,7 @@ func SetHintHandler(h HintHandler) {
 }
 
 // SetHintColor sets hint text color
-func SetHintColor(color int) {
+func SetHintColor(color uint8) {
 	if color < 0 {
 		color = 0
 	}
