@@ -16,15 +16,38 @@ concurrency:
   cancel-in-progress: true
 
 jobs:
-  Go:
-    name: Go
+  GoLinux:
+    name: Go (Linux)
+    runs-on: ubuntu-latest
 
     strategy:
       matrix:
         go: [ '1.19.x', '1.20.x', '1.21.x' , '1.22.x' ]
-        os: [ 'ubuntu-latest', 'macos-latest' ]
 
-    runs-on: ${{ matrix.os }}
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up Go
+        uses: actions/setup-go@v5
+        with:
+          go-version: ${{ matrix.go }}
+
+      - name: Download dependencies
+        run: make deps
+
+      - name: Run tests
+        run: make test
+
+  GoMac:
+    name: Go (macOS)
+    runs-on: macos-latest
+
+    needs: GoLinux
+
+    strategy:
+      matrix:
+        go: [ '1.19.x', '1.20.x', '1.21.x' , '1.22.x' ]
 
     steps:
       - name: Checkout
@@ -44,8 +67,6 @@ jobs:
   Typos:
     name: Typos
     runs-on: ubuntu-latest
-
-    needs: Go
 
     steps:
       - name: Checkout
