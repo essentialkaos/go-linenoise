@@ -1,12 +1,12 @@
-<p align="center"><a href="#readme"><img src="https://gh.kaos.st/go-linenoise.svg"/></a></p>
+<p align="center"><a href="#readme"><img src=".github/images/card.svg"/></a></p>
 
 <p align="center">
-  <a href="https://kaos.sh/g/go-linenoise.v3"><img src="https://gh.kaos.st/godoc.svg" alt="PkgGoDev"></a>
+  <a href="https://kaos.sh/g/go-linenoise.v3"><img src=".github/images/godoc.svg"/></a>
   <a href="https://kaos.sh/w/go-linenoise/ci"><img src="https://kaos.sh/w/go-linenoise/ci.svg" alt="GitHub Actions CI Status" /></a>
   <a href="https://kaos.sh/l/go-linenoise"><img src="https://kaos.sh/l/ba64cc0e3b72dd3741d5.svg" alt="Code Climate Maintainability" /></a>
   <a href="https://kaos.sh/b/go-linenoise"><img src="https://kaos.sh/b/f7800a13-657f-4be9-a359-2845f3433588.svg" alt="Codebeat badge" /></a>
   <a href="https://kaos.sh/w/go-linenoise/codeql"><img src="https://kaos.sh/w/go-linenoise/codeql.svg" alt="GitHub Actions CodeQL Status" /></a>
-  <a href="https://github.com/essentialkaos/go-linenoise/blob/master/LICENSE"><img src="https://gh.kaos.st/bsd.svg"></a>
+  <a href="LICENSE"><img src=".github/images/license.svg"/></a>
 </p>
 
 <p align="center"><a href="#example">Example</a> • <a href="#ci-status">CI Status</a> • <a href="#license">License</a></p>
