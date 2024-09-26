@@ -1,6 +1,6 @@
 module github.com/essentialkaos/go-linenoise/v3
 
-go 1.17
+go 1.21.13
 
 require github.com/essentialkaos/check v1.4.0
 
