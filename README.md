@@ -15,7 +15,7 @@
 
 `go-linenoise` is a Go package wrapping the [linenoise](https://github.com/antirez/linenoise) C library. Since `v3` we use [@yhirose](https://github.com/yhirose) [fork](https://github.com/yhirose/linenoise/tree/utf8-support) with UTF-8 support.
 
-This is fork of [go.linenoise](https://github.com/GeertJohan/go.linenoise) package used in [EK](https://github.com/essentialkaos) projects.
+This is fork of [go.linenoise](https://github.com/GeertJohan/go.linenoise) package used in [𝗘𝗞](https://github.com/essentialkaos) projects.
 
 ### Example
 

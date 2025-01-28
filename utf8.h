@@ -52,4 +52,3 @@ size_t linenoiseUtf8ReadCode(int fd, char* buf, size_t buf_len, int* cp);
 #endif
 
 #endif /* __LINENOISE_ENCODINGS_UTF8_H */
-
