@@ -22,7 +22,7 @@ jobs:
 
     strategy:
       matrix:
-        go: [ '1.22.x', '1.23.x' ]
+        go: [ 'oldstable', 'stable' ]
 
     steps:
       - name: Checkout
@@ -47,7 +47,7 @@ jobs:
 
     strategy:
       matrix:
-        go: [ '1.22.x', '1.23.x' ]
+        go: [ 'oldstable', 'stable' ]
 
     steps:
       - name: Checkout
@@ -73,5 +73,5 @@ jobs:
         uses: actions/checkout@v4
 
       - name: Check spelling
-        continue-on-error: true
         uses: crate-ci/typos@master
+        continue-on-error: true

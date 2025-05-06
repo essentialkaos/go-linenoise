@@ -2,7 +2,6 @@
 
 <p align="center">
   <a href="https://kaos.sh/g/go-linenoise.v3"><img src=".github/images/godoc.svg"/></a>
-  <a href="https://kaos.sh/l/go-linenoise"><img src="https://kaos.sh/l/ba64cc0e3b72dd3741d5.svg" alt="Code Climate Maintainability" /></a>
   <a href="https://kaos.sh/y/go-linenoise"><img src="https://kaos.sh/y/62566f1198b14e67998f9e47dfff6c3a.svg" alt="Codacy badge" /></a>
   <a href="https://kaos.sh/w/go-linenoise/ci"><img src="https://kaos.sh/w/go-linenoise/ci.svg" alt="GitHub Actions CI Status" /></a>
   <a href="https://kaos.sh/w/go-linenoise/codeql"><img src="https://kaos.sh/w/go-linenoise/codeql.svg" alt="GitHub Actions CodeQL Status" /></a>
@@ -52,9 +51,12 @@ func main() {
 | `master` | [![CI](https://kaos.sh/w/go-linenoise/ci.svg?branch=master)](https://kaos.sh/w/go-linenoise/ci?query=branch:master) |
 | `develop` | [![CI](https://kaos.sh/w/go-linenoise/ci.svg?branch=develop)](https://kaos.sh/w/go-linenoise/ci?query=branch:develop) |
 
-### License
-All code in this repository is licensed under a BSD license.
-This project wraps [linenoise](https://github.com/antirez/linenoise) which is written by Salvatore Sanfilippo and Pieter Noordhuis. The license for linenoise is included in the files `linenoise.c` and `linenoise.h`.
-For all other files please read the [LICENSE](LICENSE) file.
+### Contributing
 
-<p align="center"><a href="https://essentialkaos.com"><img src="https://gh.kaos.st/ekgh.svg"/></a></p>
+Before contributing to this project please read our [Contributing Guidelines](https://github.com/essentialkaos/.github/blob/master/CONTRIBUTING.md).
+
+### License
+
+All code in this repository is licensed under a BSD license. This project wraps [linenoise](https://github.com/antirez/linenoise) which is written by Salvatore Sanfilippo and Pieter Noordhuis. The license for linenoise is included in the files `linenoise.c` and `linenoise.h`. For all other files please read the [LICENSE](LICENSE) file.
+
+<p align="center"><a href="https://kaos.dev"><img src="https://raw.githubusercontent.com/essentialkaos/.github/refs/heads/master/images/ekgh.svg"/></a></p>
