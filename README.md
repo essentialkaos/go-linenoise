@@ -57,8 +57,6 @@ Before contributing to this project please read our [Contributing Guidelines](ht
 
 ### License
 
-All code in this repository is licensed under a BSD license.
-This project wraps [linenoise](https://github.com/antirez/linenoise) which is written by Salvatore Sanfilippo and Pieter Noordhuis. The license for linenoise is included in the files `linenoise.c` and `linenoise.h`.
-For all other files please read the [LICENSE](LICENSE) file.
+All code in this repository is licensed under a BSD license. This project wraps [linenoise](https://github.com/antirez/linenoise) which is written by Salvatore Sanfilippo and Pieter Noordhuis. The license for linenoise is included in the files `linenoise.c` and `linenoise.h`. For all other files please read the [LICENSE](LICENSE) file.
 
 <p align="center"><a href="https://kaos.dev"><img src="https://raw.githubusercontent.com/essentialkaos/.github/refs/heads/master/images/ekgh.svg"/></a></p>
